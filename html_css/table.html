@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> My Table</title>
+    <style>
+        table, td, th {border:1px solid black; padding:15px}
+        td {color: purple; width:33.33%;height:33.33%}
+        .loss {text-align:right; background: green}
+    </style>
+</head>
+<body>
+    <table>    <!-- 表格的标识 -->
+        <thead>  <!-- thead -> t + head 表的头 -->
+            <tr> <th>Skills</th> <th>Difficulty</th> <th>My Level</th> </tr> 
+        </thead>
+
+        <tbody> <!-- tbody -> t + body 表的内容 --> 
+            <!-- <tr></tr>表示一行 -->
+            <tr> <td>HTML</td> <td>Easy</td> <td>Some</td>
+            <tr> <td>CSS</td> <td class="loss">Medium</td> <td>A Little</td>
+            <tr> <td>JAVA Script</td> <td class="loss">Medium</td> <td>A Little</td>
+        </tbody>
+    </table>
+</body>
+</html>

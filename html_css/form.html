@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <form action="http://127.0.0.1:40400/test" method="get">
+            <p> Please enter any feedback you have.</p>
+
+            <textarea rows="3" cols="60" name="feedback">
+                Please enter your text here
+            </textarea>
+
+            <!-- 不同的输入类型 -->
+            <p style="background: lightblue"> The follow is text input</p>
+            <input type="text" name="feedback">input<br>
+
+            <p style="background: lightblue"> The follow is raido input</p>
+            <input type="radio" name="iq" value="hight">hight<br>
+            <input type="radio" name="iq" value="low" checked>low<br>
+
+            <p style="background: lightblue"> The follow is checkbox input</p>
+            <input type="checkbox" name="items" value="car">Car<br>
+            <input type="checkbox" name="items" value="tea">Tea<br>
+
+            <p style="background: lightblue"> The follow is passwd input</p>
+            <input type="password" name="userpasswd"> <br>
+
+            <p style="background: lightblue"> The follow is select input</p>
+            <select name="cities">
+                <option value="hk">Hong Kong</option>
+                <option value="sf">San Francisco</option>
+                <option value="sg">新加坡</option>
+            </select>
+
+            <p style="background: lightblue"> The follow is label input</p>
+            <label for="firstName">First Name:</label> <!-- label关联到id为firstName的输入 -->
+            <input type="text" id="firstName" name="firstname" value="Dave" autofocus><br>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastname" placeholder="Your last name goes here"><br>
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required><br> <!-- 要去必须输入 -->
+
+            <p style="background: lightblue"> The follow is other input</p>
+            <input type="number">number<br>
+            <input type="date">date<br>
+            <input type="time">time<br>
+            <input type="color">color<br>
+            <input type="range">slider<br>
+
+            <br>
+            <input type="submit" value="Send">
+            <br>
+
+        </form>
+
+        <form method="post" enctype="multipart/form-data" action="http:127.0.0.1:8899/test">
+            <p style="background: lightcoral"> The following is upload file</p>
+            <p> Select the file you want to upload</p>
+                <input type="file" name="fileToUpload">
+
+                <p>Press this button to send it </p>
+                <input type="submit" value="Upload the file">
+        </form>
+
+        <form>
+            <!-- 分组：在html里分组使用两个关键字 fieldset和legend -->
+            <fieldset>
+                <!-- 组一，跟个人信息相关 -->
+                <legend>Personal Information</legend>
+                First name? <input type="text" name="firstname"><br>
+                Last name? <input type="text" name="lastname"><br>
+            </fieldset>
+
+            <fieldset>
+                <!-- 组二，跟颜色相关 -->
+                <legend>Color Information</legend>
+                You like color? <input type="text" name="like color"><br>
+                You hate color? <input type="text" name="hate color"><br>
+            </fieldset>
+            <input type="submit" value="send">
+        </form>
+    </body>
+</html>
