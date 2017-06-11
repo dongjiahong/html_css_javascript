@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Demonstration of Linking to a Style File</title>
+
+        <!-- 第一个例子，引用css文件-->
+        <link href="html_example_css_file.css" rel="stylesheet" type="text/css">
+
+        <!-- 第二个例子将样式写在同一个文件里 -->
+        <style>
+            #rainbowColors {background: gray}
+            #red {background: red}
+            #orange {background: orange}
+            #yellow {background: yellow}
+            #green {background: green}
+        </style>
+
+        <!-- 第三个例子使用“类”，就是在样式前用`.类名 {}` -->
+        <style>
+            .class1 {color:purple; background: yellow}
+            .class2 {color:blue; background: lightgreen}
+        </style>
+
+        <!-- 第四个例子 对所有的表项统一设置样式 -->
+        <style>
+            li {background: yellow}
+        </style>
+
+        <!-- 第五个例子，伪装类,就是在属性后面加冒号如 `h1:hover or a:active` -->
+        <style>
+            h1:hover {color:red}            /* 伪装类hover，让当鼠标经过h1标题时变hong */
+            a:link {color: pink}            /* 让所有的链接变粉色 */
+            a:visited {color: green}        /* 已经访问过的链接变橙 */
+            a:active {color: red}           /* 表示链接当前正在被加载,如果网速快可能看不到 */
+            p:empty {color: green}          /* empty不一定用在连接上，其他也行，表示空的元素的样式 */
+            li:empty {background: brown}    /* 空表项背景色为棕红色 */
+        </style>
+
+
+    </head>
+    <body>
+        <!-- 华丽的分割线 -->
+        <h1>我是标题</h1>
+        <p>我是段落</p>
+        
+        <!-- 华丽的分割线 -->
+        <ul id="rainbowColors">
+            <li id="red">Red</li>
+            <li id="orange">Orange</li>
+            <li id="yellow">Yellow</li>
+            <li id="green">Green</li>
+        </ul>
+
+        <!-- 华丽的分割线 -->
+        <h1 class="class1"> My first heading</h1>
+        <p class="class2"> My first paragraph</p>
+
+       <!-- 下面的样式是让文字靠右--> 
+        <p style="text-align:right"> Welcome.</p>
+
+        <!-- 华丽的分割线 -->
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li style="background: purple">Three</li> <!-- 这里的样式优先级比全局高-->
+            <li>Four</li>
+        </ul>
+
+        <!-- 华丽的分割线 -->
+        <a href="http://baidu.com/">Baidu</a>
+        <a href="http://baidu.com/">Baidu</a>
+        <a href="http://baidu.com/">Baidu</a>
+        <ol>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li></li> <!-- 表项是红棕色 -->
+        </ol>
+    </body>
+</html>
+
