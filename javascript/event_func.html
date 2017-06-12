@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event and Function Example</title>
+    </head>
+
+    <!-- onload事件就是只当加载时 -->
+    <body onload="check_user_age()">
+        <h1>This is my naughty home page.</h1>
+        <script>
+            function check_user_age(){
+                if (age_of_user()<18) {
+                    alert("please go to anther page.");
+                }
+            }
+            function age_of_user(){
+                var age_text, age;
+                age_text=prompt("what is your age?");
+                age=parseInt(age_text);
+                return age;
+            }
+        </script>
+    </body>
+</html>

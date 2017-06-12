@@ -10,7 +10,12 @@
             if (confirm("Want to go to Baidu?"))
                 document.location.href = "http://baidu.com";
             surprise();
-            document.write("Welcome to my page " +welcomeBoy()+ "!");
+            document.writeln("Welcome to my page " +welcomeBoy()+ "!");
+            var v=3; // 定义变量v type is number
+            v="xx"; // type is string
+            document.writeln("typeof v is: "+typeof(v));
+            v=56.3; // type is number
+            document.writeln("typeof v is: "+typeof(v));
         </script>
     </body>
 </html>
