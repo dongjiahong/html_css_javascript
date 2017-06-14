@@ -16,6 +16,33 @@
             document.writeln("typeof v is: "+typeof(v));
             v=56.3; // type is number
             document.writeln("typeof v is: "+typeof(v));
+            var pets = ["Dog", "Cat"]; //  var ppets = new Array(10);
+            pets.push("Hamster");       // ["Dog", "Cat", "Hamster"]
+            pets.unshift("Hamster");    // ["Hamster", "Dog", "Cat"]
+            pets.pop();                 // ["Dog", "Cat"]
+            console.log(pets.join(" and "));
+            console.log(pets.length);
+            console.log(Math.random());// [0,1)
+
+            // 数组
+            var pets = ["Dog", "Cat", "Rabbit", "Hamster", "Rabbit", "Rabbit", "Dog", "Cat",
+                "Hamster", "Hamster", "Rabbit"];
+            var rabbitPositions = [], startSearchAt = 0;
+            do{
+                foundAt = pets.indexOf("Rabbit", startSearchAt);
+                if (foundAt != -1) {
+                    rabbitPositions.push(foundAt);
+                    startSearchAt = foundAt + 1;
+                }
+            } while(foundAt != -1);
+            console.log(rabbitPositions);
+
+            // 数组和函数
+            var numbers = [1,2,3,4,5]
+            numbers.forEach(function(elem, idx, arr){
+                arr[idx] =elem * elem;
+            });
+            console.log(numbers);
         </script>
     </body>
 </html>
