@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Doc结构
+        </title>
+        <script>
+            function headleClick(event) {
+                event.stopPropagation();
+                var node = event.target;
+                var thisPath = node.nodeName;
+
+                while (node.parentNode) {
+                    node = node.parentNode;
+                    thisPath = node.nodeName + ">" + thisPath
+                }
+                console.log(thisPath)
+            }
+            function change_color1() { // 定位太难用
+                document.childNodes[0].childNodes[2].childNodes[1].style.color="red";
+            }
+            function change_color2() { // 定位一般难用
+                document.getElementsByTagName("h2")[0].style.color = "yellow";
+            }
+            function change_color3() { // 定位好用
+                document.getElementById("cute_text").style.color="blue";
+                document.getElementById("cute_text").style.backgroundColor="green";
+                //document.getElementById("cute_text").setAttribute("style", "color:pink");
+            }
+            function createNewNode() {
+                newItem = document.createElement("hr"); // 创建一个item
+                destParent = document.getElementsByTagName("body")[0]; // 找到一个合适的位置
+                destParent.insertBefore(newItem, destParent.firstChild); // 插入
+            }
+            function createNewNode1() {
+                result=document.createTextNode("This is dynamically added Text!");
+                document.getElementById("cute_text").appendChild(result);
+            }
+            function delNode() {
+                this_node=document.getElementById("cute_text");
+                this_node.removeChild(this_node.firstChild);
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2 style="color:black" id="cute_text">
+            Click on a button to change the color!
+        </h2>
+
+        <form>
+            <input onclick="change_color1()" type="button" value="Change using method 1">
+            <input onclick="change_color2()" type="button" value="Change using method 2">
+            <input onclick="change_color3()" type="button" value="Change using method 3">
+            <!-- 华丽的分割线-->
+            <input onclick="createNewNode()" type="button" value="create a hr tab!">
+            <input onclick="createNewNode1()" type="button" value="create text node!">
+            <input onclick="delNode()" type="button" value="delete text node!">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>An Example Project </title>
+        <meta http-equiv="refresh" content="1">
+        <style>
+            div {position: absolute}
+        </style>
+    </head>
+
+    <body id="theBody" onload="show_pattern()">
+        <script>
+            function show_pattern() {
+                var colours = ["red", "blue","green"];
+                var t=20,r=300,b=300,l=20;
+                var i=new Date().getSeconds();
+                while (t<180) {
+                    x=i%3;
+                    creatDiv(t,r,b,l,colours[x]);
+                    i++;
+                    t+=10;
+                    r-=20;
+                    b-=20;
+                    l+=10;
+                }
+            }
+            function creatDiv(t,r,b,l,colour) {
+                d=document.createElement("div");
+                d.style.top = t+"px";
+                d.style.left = l+"px";
+                d.style.width= b+"px"; 
+                d.style.height= r+"px";
+                d.style.background = colour;
+                document.getElementById("theBody").appendChild(d);
+            }
+        </script>
+    </body>
+</html>
